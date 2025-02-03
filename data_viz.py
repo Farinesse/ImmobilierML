@@ -1,34 +1,28 @@
 # Databricks notebook source
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns
+
+# COMMAND ----------
+
+spark.read.format("delta").table("default.immobilier_analysis").count()
+
+# COMMAND ----------
+
 df = spark.read.format("delta").table("default.immobilier_analysis_1M")
 
 # COMMAND ----------
 
 df=df.toPandas()
 
-
-
-# COMMAND ----------
-
-import seaborn as sns
-import matplotlib.pyplot as plt
-
 # COMMAND ----------
 
 df.info()
 
 # COMMAND ----------
-
-!pip install ace-tools
-
-# COMMAND ----------
-
-import pandas as pd
-import matplotlib.pyplot as plt
-import numpy as np
-import seaborn as sns
-
-# Charger le DataFrame
-# df = pd.read_csv("fichier.csv")  # Décommentez pour charger un fichier
 
 # Conversion des colonnes en numérique
 cols_to_convert = [
