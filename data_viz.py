@@ -5,6 +5,8 @@ df = spark.read.format("delta").table("default.immobilier_analysis_1M")
 
 df=df.toPandas()
 
+
+
 # COMMAND ----------
 
 import seaborn as sns
